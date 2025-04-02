@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Shakerag: Responsible Development for Embry Farms</title>
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --secondary: #97bc62;
+            --accent: #e0a458;
+            --light: #f0f4f1;
+            --dark: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #edf5ed;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23e6f8e3'/%3E%3Cstop offset='1' stop-color='%23e6f8e3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dff1de'/%3E%3Cstop offset='1' stop-color='%23dff1de' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23d8ebda'/%3E%3Cstop offset='1' stop-color='%23d8ebda' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        /* Tree pattern overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%2397bc62' stroke-width='1' stroke-opacity='0.15'%3E%3C!-- Tree 1 --%3E%3Cpath d='M50,280 L50,220 M30,280 L50,220 L70,280 M20,260 L50,200 L80,260 M35,240 L50,180 L65,240 M40,220 L50,160 L60,220 M45,200 L50,150 L55,200 M45,180 L50,140 L55,180'/%3E%3C!-- Tree 2 --%3E%3Cpath d='M150,300 L150,200 M120,300 L150,200 L180,300 M110,270 L150,170 L190,270 M125,240 L150,140 L175,240 M135,210 L150,110 L165,210'/%3E%3C!-- Tree 3 --%3E%3Cpath d='M250,280 L250,200 M230,280 L250,200 L270,280 M220,260 L250,180 L280,260 M235,240 L250,160 L265,240 M240,220 L250,140 L260,220'/%3E%3C!-- Tree 4 --%3E%3Cpath d='M350,290 L350,200 M320,290 L350,200 L380,290 M330,260 L350,170 L370,260 M335,230 L350,140 L365,230'/%3E%3C!-- Small Tree 1 --%3E%3Cpath d='M100,320 L100,280 M90,320 L100,280 L110,320 M85,310 L100,270 L115,310 M90,300 L100,260 L110,300'/%3E%3C!-- Small Tree 2 --%3E%3Cpath d='M200,330 L200,290 M190,330 L200,290 L210,330 M185,320 L200,280 L215,320 M190,310 L200,270 L210,310'/%3E%3C!-- Small Tree 3 --%3E%3Cpath d='M300,340 L300,300 M290,340 L300,300 L310,340 M285,330 L300,290 L315,330 M290,320 L300,280 L310,320'/%3E%3C!-- Pine Tree 1 --%3E%3Cpath d='M80,390 L80,350 M60,390 L80,350 L100,390 M65,380 L80,340 L95,380 M70,370 L80,330 L90,370 M73,360 L80,320 L87,360 M75,350 L80,310 L85,350'/%3E%3C!-- Pine Tree 2 --%3E%3Cpath d='M180,380 L180,340 M160,380 L180,340 L200,380 M165,370 L180,330 L195,370 M170,360 L180,320 L190,360 M173,350 L180,310 L187,350 M175,340 L180,300 L185,340'/%3E%3C!-- Curved Tree --%3E%3Cpath d='M280,390 C280,380 280,370 280,350 M260,390 C270,380 275,370 280,350 C285,370 290,380 300,390 M265,380 C272,370 276,360 280,340 C284,360 288,370 295,380 M270,370 C275,360 278,350 280,330 C282,350 285,360 290,370'/%3E%3C!-- Larger Pine in top corner --%3E%3Cpath d='M20,120 L20,80 M0,120 L20,80 L40,120 M5,110 L20,70 L35,110 M10,100 L20,60 L30,100 M13,90 L20,50 L27,90 M15,80 L20,40 L25,80'/%3E%3C!-- Larger Pine in top corner 2 --%3E%3Cpath d='M380,150 L380,100 M360,150 L380,100 L400,150 M365,140 L380,90 L395,140 M370,130 L380,80 L390,130 M373,120 L380,70 L387,120 M375,110 L380,60 L385,110'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+            opacity: 1;
+        }
+        
+        /* Additional tree pattern in darker color */
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450' viewBox='0 0 450 450'%3E%3Cg fill='none' stroke='%232c5f2d' stroke-width='1' stroke-opacity='0.07'%3E%3C!-- Offset Trees to create variety --%3E%3C!-- Tree 1 --%3E%3Cpath d='M25,310 L25,250 M5,310 L25,250 L45,310 M0,290 L25,230 L50,290 M10,270 L25,210 L40,270 M15,250 L25,190 L35,250 M18,230 L25,180 L32,230'/%3E%3C!-- Tree 2 --%3E%3Cpath d='M120,330 L120,230 M90,330 L120,230 L150,330 M95,300 L120,200 L145,300 M100,270 L120,170 L140,270 M105,240 L120,140 L135,240'/%3E%3C!-- Tree 3 --%3E%3Cpath d='M220,300 L220,220 M200,300 L220,220 L240,300 M195,280 L220,200 L245,280 M205,260 L220,180 L235,260 M210,240 L220,160 L230,240'/%3E%3C!-- Tree 4 --%3E%3Cpath d='M320,320 L320,230 M290,320 L320,230 L350,320 M295,290 L320,200 L345,290 M300,260 L320,170 L340,260'/%3E%3C!-- Tree 5 --%3E%3Cpath d='M420,300 L420,220 M400,300 L420,220 L440,300 M395,280 L420,200 L445,280 M405,260 L420,180 L435,260 M410,240 L420,160 L430,240'/%3E%3C!-- Small Tree 1 --%3E%3Cpath d='M75,350 L75,310 M65,350 L75,310 L85,350 M60,340 L75,300 L90,340 M65,330 L75,290 L85,330'/%3E%3C!-- Small Tree 2 --%3E%3Cpath d='M170,360 L170,320 M160,360 L170,320 L180,360 M155,350 L170,310 L185,350 M160,340 L170,300 L180,340'/%3E%3C!-- Small Tree 3 --%3E%3Cpath d='M270,370 L270,330 M260,370 L270,330 L280,370 M255,360 L270,320 L285,360 M260,350 L270,310 L280,350'/%3E%3C!-- Small Tree 4 --%3E%3Cpath d='M370,380 L370,340 M360,380 L370,340 L380,380 M355,370 L370,330 L385,370 M360,360 L370,320 L380,360'/%3E%3C!-- Pine Tree 1 --%3E%3Cpath d='M45,420 L45,380 M25,420 L45,380 L65,420 M30,410 L45,370 L60,410 M35,400 L45,360 L55,400 M38,390 L45,350 L52,390 M40,380 L45,340 L50,380'/%3E%3C!-- Curved Tree --%3E%3Cpath d='M145,420 C145,410 145,400 145,380 M125,420 C135,410 140,400 145,380 C150,400 155,410 165,420 M130,410 C137,400 141,390 145,370 C149,390 153,400 160,410 M135,400 C140,390 143,380 145,360 C147,380 150,390 155,400'/%3E%3C!-- Larger Pine in corner --%3E%3Cpath d='M400,90 L400,40 M380,90 L400,40 L420,90 M385,80 L400,30 L415,80 M390,70 L400,20 L410,70 M393,60 L400,10 L407,60 M395,50 L400,0 L405,50'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: -2;
+            opacity: 1;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            font-size: 1rem;
+        }
+        
+        main {
+            padding: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        section {
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .cta {
+            background-color: var(--accent);
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #1a3a1b;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Save Shakerag</h1>
+        <p class="subtitle">Advocating for Responsible Development at Embry Farms</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Our Concerns</h2>
+            <p>The proposed rezoning of Embry Farms with 1/4-acre lots threatens to urbanize Johns Creek's last rural area - a region rich in Cherokee heritage and designated for preservation in the 2018 Comprehensive Plan.</p>
+            
+            <div class="highlight">
+                <p>If approved as submitted, this proposal may harm all stakeholders:</p>
+                <ul>
+                    <li>The <strong>City</strong> risks infrastructure strain and diminished public trust</li>
+                    <li>The <strong>Applicant</strong> risks a failed sales strategy due to impractical pricing and congestion</li>
+                    <li>The <strong>Community</strong> risks decreased property values, increased traffic, and erosion of Shakerag's rural identity</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Environmental Limitations</h2>
+            <p>The Embry Farms site has significant topographical challenges that limit responsible development:</p>
+            <ul>
+                <li>Minimal road frontage</li>
+                <li>Steep slopes and large floodplains</li>
+                <li>Over 73% of the land lies within the protected Chattahoochee River Corridor</li>
+            </ul>
+            <p>For decades, the Embry family used this parcel as a private farm because of these environmental constraints. Any future development must respect these limitations.</p>
+        </section>
+        
+        <section>
+            <h2>Legal Concerns</h2>
+            <p>We believe that:</p>
+            <ul>
+                <li>The 2018 Comprehensive Plan clearly reduced allowable density in Shakerag to 1 unit per net acre or less</li>
+                <li>CUP zoning is being improperly used to bypass AG-1 1-acre minimum standards</li>
+                <li>The 2019 Ashton Woods denial should serve as binding precedent</li>
+                <li>Critical zoning provisions are being misinterpreted as merely "best practices" rather than enforceable requirements</li>
+            </ul>
+            
+            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 5px; margin: 1.5rem 0;">
+                <p><strong>Reference Documents:</strong></p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>📄 <a href="https://www.dca.ga.gov/sites/default/files/johnscreekcicompplan_adopted_2018_reduced.pdf" target="_blank">Johns Creek Comprehensive Plan 2018-2028 (PDF)</a></li>
+                    <li>📄 <a href="https://johnscreekga.gov/government/city-plans/comprehensive-plan/" target="_blank">City of Johns Creek Comprehensive Plan Official Page</a></li>
+                    <li>📄 <a href="https://dca.georgia.gov/johns-creek-city-comprehensive-plan" target="_blank">Georgia DCA - Johns Creek Comprehensive Plan Resources</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Our Request</h2>
+            <p>We respectfully ask the City Commissioners to:</p>
+            <ul>
+                <li>Have the City Attorney present at the May 6th hearing</li>
+                <li>Review legal standards from the Georgia Planning Act, 2018 Comprehensive Plan, and Zoning Ordinance</li>
+                <li>Consider the 2019 Ashton Woods denial as binding precedent</li>
+                <li>Recognize the risk of setting a precedent that could erode the entire Shakerag Character Area</li>
+            </ul>
+            <p>This is not anti-development. We support responsible growth that respects our community's character and environmental constraints.</p>
+        </section>
+        
+        <section>
+            <h2>Contact Your City Council</h2>
+            <p>Please reach out to your City Council members to express your concerns about the Embry Farms rezoning:</p>
+            
+            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem;">
+                <p><strong>Mayor:</strong> John Bradberry | <a href="mailto:john.bradberry@johnscreekga.gov">john.bradberry@johnscreekga.gov</a></p>
+                
+                <p style="margin-top: 1rem;"><strong>City Council Members:</strong></p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Post 1:</strong> Dilip Tunki | <a href="mailto:dilip.tunki@johnscreekga.gov">dilip.tunki@johnscreekga.gov</a></li>
+                    <li><strong>Post 2:</strong> Stacy Skinner | <a href="mailto:stacy.skinner@johnscreekga.gov">stacy.skinner@johnscreekga.gov</a></li>
+                    <li><strong>Post 3:</strong> Bob Erramilli | <a href="mailto:bob.erramilli@johnscreekga.gov">bob.erramilli@johnscreekga.gov</a></li>
+                    <li><strong>Post 4:</strong> Chris Coughlin | <a href="mailto:chris.coughlin@johnscreekga.gov">chris.coughlin@johnscreekga.gov</a></li>
+                    <li><strong>Post 5:</strong> Larry DiBiase | <a href="mailto:larry.dibiase@johnscreekga.gov">larry.dibiase@johnscreekga.gov</a></li>
+                    <li><strong>Post 6:</strong> Erin Elwood | <a href="mailto:erin.elwood@johnscreekga.gov">erin.elwood@johnscreekga.gov</a></li>
+                </ul>
+            </div>
+            
+            <p>City Hall Address: 11360 Lakefield Dr, Johns Creek, GA 30097</p>
+            <p>City Hall Phone: (678) 512-3200</p>
+            <p>City Council meetings are held on Monday evenings at 7 p.m. at City Hall.</p>
+        </section>
+        
+        <div class="cta">
+            <h2>Join Our Cause</h2>
+            <p>Help us protect Shakerag's rural character and ensure responsible development.</p>
+            <a href="#" class="button">Sign the Petition</a>
+            <p style="margin-top: 1rem;">Contact us: <a href="mailto:hello@saveshakerag.org" style="color: var(--primary); font-weight: bold;">hello@saveshakerag.org</a></p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Save Shakerag | Johns Creek, Georgia</p>
+    </footer>
+</body>
+</html>
