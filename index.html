@@ -164,6 +164,49 @@
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
         }
+
+        /* New styles for the victory banner */
+        .victory-banner {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 0 0 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--accent);
+            animation: pulseBorder 2s infinite;
+        }
+
+        @keyframes pulseBorder {
+            0% { border-color: var(--accent); }
+            50% { border-color: var(--secondary); }
+            100% { border-color: var(--accent); }
+        }
+
+        .victory-banner h2 {
+            color: white;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .victory-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .vote-result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: var(--accent);
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+        }
         
         footer {
             background-color: var(--primary);
@@ -215,6 +258,15 @@
     </header>
     
     <main>
+        <!-- New Victory Banner Section -->
+        <div class="victory-banner">
+            <h2>Victory Update!</h2>
+            <p>The May 9th Planning Commission meeting resulted in a <strong>REJECTION</strong> of the rezoning proposal!</p>
+            <div class="vote-result">Vote Result: 5-2 Against</div>
+            <p>Thank you to everyone who showed up and made their voices heard. This is a significant step toward protecting Shakerag's rural character.</p>
+            <p>The proposal will still go to the City Council meeting on May 19th - we need your continued support!</p>
+        </div>
+        
         <section>
             <h2>Our Concerns</h2>
             <p>The proposed rezoning of Embry Farms with 1/4-acre lots threatens to urbanize Johns Creek's last rural area - a region rich in Cherokee heritage and designated for preservation in the 2018 Comprehensive Plan.</p>
@@ -233,12 +285,7 @@
             <h2>Upcoming Rezoning Meetings</h2>
             <div class="upcoming-meetings">
                 <h3 style="color: var(--primary); margin-bottom: 1rem;">Your Voice Matters!</h3>
-                <p>Join these critical meetings to help protect Shakerag's future:</p>
-                
-                <div class="meeting-item">
-                    <span class="meeting-date">May 6, 2025 at 7:00 PM</span>
-                    Planning Commission Meeting at City Hall
-                </div>
+                <p>Join this critical meeting to help protect Shakerag's future:</p>
                 
                 <div class="meeting-item">
                     <span class="meeting-date">May 19, 2025 at 7:00 PM</span>
@@ -247,7 +294,7 @@
                 
                 <p style="margin-top: 1rem;">City Hall Address: <a href="https://maps.app.goo.gl/UVzY5ppHa3f7w1vv5" target="_blank">11360 Lakefield Dr, Johns Creek, GA 30097</a></p>
             </div>
-            <p>These meetings will determine the future of the Embry Farms rezoning proposal. Strong community attendance demonstrates our commitment to preserving Shakerag's character.</p>
+            <p>This meeting will determine the final outcome of the Embry Farms rezoning proposal. Strong community attendance demonstrates our commitment to preserving Shakerag's character.</p>
         </section>
         
         <section>
@@ -283,9 +330,9 @@
         
         <section>
             <h2>Our Request</h2>
-            <p>We respectfully ask the City Commissioners to:</p>
+            <p>We respectfully ask the City Council to:</p>
             <ul>
-                <li>Have the City Attorney present at the May 6th hearing</li>
+                <li>Follow the Planning Commission's recommendation to reject the proposal</li>
                 <li>Review legal standards from the Georgia Planning Act, 2018 Comprehensive Plan, and Zoning Ordinance</li>
                 <li>Consider the 2019 Ashton Woods denial as binding precedent</li>
                 <li>Recognize the risk of setting a precedent that could erode the entire Shakerag Character Area</li>
