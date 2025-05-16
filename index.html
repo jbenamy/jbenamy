@@ -207,6 +207,37 @@
             padding: 0.5rem 1.5rem;
             border-radius: 5px;
         }
+
+        /* NEW STYLE: Petition banner */
+        .petition-banner {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 5px;
+            margin: 1rem 0 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px dashed var(--accent);
+            position: relative;
+        }
+
+        .petition-banner h3 {
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .petition-banner .button {
+            background-color: var(--accent);
+            margin-top: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .petition-banner .button:hover {
+            background-color: #c88c3e;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
         
         footer {
             background-color: var(--primary);
@@ -258,7 +289,14 @@
     </header>
     
     <main>
-        <!-- New Victory Banner Section -->
+        <!-- NEW ELEMENT: Petition Banner - MOVED TO TOP -->
+        <div class="petition-banner">
+            <h3>Sign Our Petition to Save Shakerag!</h3>
+            <p>Show your support for preserving Shakerag's rural character by signing our community petition.</p>
+            <a href="https://www.gopetition.com/signatures/save-shakerag-2025.html" class="button" target="_blank">Sign the Petition Now</a>
+        </div>
+        
+        <!-- Victory Banner Section -->
         <div class="victory-banner">
             <h2>Victory Update!</h2>
             <p>The May 9th Planning Commission meeting resulted in a <strong>REJECTION</strong> of the rezoning proposal!</p>
